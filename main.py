@@ -7,6 +7,6 @@ app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
 
-app.include_router(usuario.router, prefix="/usuarios", tags=["Usuarios"])
-app.include_router(pet.router, prefix="/pets", tags=["Pets"])
-app.include_router(adocao.router, prefix="/adocoes", tags=["Adocoes"])
+app.include_router(usuario.router, prefix="/Usuario", tags=["Usuario"])
+app.include_router(pet.router, prefix="/Pets", tags=["Pet"])
+app.include_router(adocao.router, prefix="/Adocao", tags=["Adocao"])

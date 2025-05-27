@@ -4,7 +4,7 @@ from database import get_db
 import models
 import schemas
 
-router = APIRouter(prefix="/adocoes", tags=["Adoções"])
+router = APIRouter(prefix="/Adocao", tags=["Adocao"])
 
 @router.post("/", response_model=schemas.Adocao)
 def criar_adocao(adocao: schemas.AdocaoCreate, db: Session = Depends(get_db)):

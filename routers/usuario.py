@@ -4,7 +4,7 @@ from database import get_db
 import models
 import schemas
 
-router = APIRouter(prefix="/usuarios", tags=["Usuários"])
+router = APIRouter(prefix="/Usuario", tags=["Usuario"])
 
 @router.post("/")
 def criar_usuario(usuario: schemas.UsuarioCreate, db: Session = Depends(get_db)):

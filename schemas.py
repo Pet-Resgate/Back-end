@@ -21,7 +21,7 @@ class UsuarioCreate(UsuarioBase):
 class UsuarioOut(UsuarioBase):
     id_usuario: int
     class Config:
-        from_attributes = True  # <- CORRIGIDO
+        from_attributes = True 
 
 # -------------------- PET --------------------
 class PetBase(BaseModel):
@@ -41,7 +41,7 @@ class PetOut(PetBase):
     id_pet: int
     id_usuario: int
     class Config:
-        from_attributes = True  # <- CORRIGIDO
+        from_attributes = True 
 
 # -------------------- ADOÇÃO --------------------
 class AdocaoBase(BaseModel):
@@ -58,7 +58,7 @@ class AdocaoOut(AdocaoBase):
     class Config:
         from_attributes = True 
 
-class Adocao(AdocaoBase):  # <-- Adicione essa classe
+class Adocao(AdocaoBase): 
     id_adocao: int
     class Config:
         orm_mode = True 

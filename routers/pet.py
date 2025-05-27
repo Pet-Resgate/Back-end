@@ -4,7 +4,7 @@ from database import get_db
 import models
 import schemas
 
-router = APIRouter(prefix="/pets", tags=["Pets"])
+router = APIRouter(prefix="/Pet", tags=["Pet"])
 
 @router.post("/")
 def criar_pet(pet: schemas.PetCreate, db: Session = Depends(get_db)):
