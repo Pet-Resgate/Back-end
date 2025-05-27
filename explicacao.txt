@@ -1,0 +1,53 @@
+main.py
+🔧 Função: É o ponto de entrada da aplicação.
+- Cria a instância do FastAPI (app = FastAPI()).
+- Conecta os arquivos de rotas (ex: usuario.py, pet.py, adocao.py).
+- Quando você executa uvicorn main:app, é aqui que tudo começa.
+
+schemas.py
+📦 Função: Define os modelos de dados (Pydantic) que entram e saem da API.
+- Valida o que o usuário pode enviar e receber.
+- Ex: UsuarioCreate, PetOut, AdocaoBase, etc.
+- Usado para segurança e validação de entrada/saída.
+
+models.py
+🏗️ Função: Define os modelos do banco de dados (SQLAlchemy).
+- Aqui você diz como será a estrutura das tabelas.
+- Ex: Usuario, Pet, Adocao.
+- Cada classe vira uma tabela no PostgreSQL.
+
+database.py
+🔌 Função: Faz a conexão com o banco de dados.
+- Cria a engine, a Session e a Base do SQLAlchemy.
+- Usado por models.py e nos arquivos crud para interagir com o banco.
+
+📁 routers/
+Essa pasta contém os endereços da API (as rotas). São os arquivos que definem o que acontece quando alguém acessa um endpoint, por exemplo /usuarios, /pets, /adocoes.
+
+routers/usuario.py
+👤 Função: Define as rotas de usuário.
+Ex: cadastrar usuário, buscar por ID, listar todos.
+Usa os modelos de schemas.py e models.py.
+
+routers/pet.py
+🐶 Função: Define as rotas de pets.
+Ex: adicionar um pet, buscar pets disponíveis, editar dados do pet.
+Também se comunica com o banco via os modelos.
+
+routers/adocao.py
+🏠 Função: Define as rotas de adoção.
+Ex: registrar uma adoção, listar todas, ver histórico de um usuário.
+Usa o modelo Adocao e o schema AdocaoCreate, por exemplo.
+
+📁 __pycache__/
+🧹 Função: Pasta automática do Python para armazenar arquivos compilados (.pyc).
+Você pode ignorar. O Python cria isso para acelerar a execução.
+
+🔄 Como tudo se conecta
+main.py inicia o app e importa as rotas (routers/...).
+As rotas usam os schemas para validar dados.
+As rotas acessam o banco através dos models e da sessão criada em database.py.
+O banco de dados armazena e retorna as informações.
+
+documentacao 
+http://127.0.0.1:8000/docs#/

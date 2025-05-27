@@ -1,0 +1,64 @@
+#Valida o que o usuário pode enviar e receber.
+
+from pydantic import BaseModel
+from typing import Optional
+from datetime import date
+
+# -------------------- USUÁRIO --------------------
+class UsuarioBase(BaseModel):
+    tipo_usuario: str
+    nome: str
+    idade: Optional[int]
+    email: str
+    CPF: Optional[str]
+    CNPJ: Optional[str]
+    senha: str
+    telefone: Optional[str]
+
+class UsuarioCreate(UsuarioBase): 
+    pass
+
+class UsuarioOut(UsuarioBase):
+    id_usuario: int
+    class Config:
+        from_attributes = True  # <- CORRIGIDO
+
+# -------------------- PET --------------------
+class PetBase(BaseModel):
+    nome: Optional[str]
+    idade: Optional[int]
+    animal: Optional[str]
+    raca: Optional[str]
+    porte: Optional[str]
+    descricao: Optional[str]
+    status: Optional[str]
+    data_resgate: Optional[date]
+
+class PetCreate(PetBase):
+    id_usuario: int
+
+class PetOut(PetBase):
+    id_pet: int
+    id_usuario: int
+    class Config:
+        from_attributes = True  # <- CORRIGIDO
+
+# -------------------- ADOÇÃO --------------------
+class AdocaoBase(BaseModel):
+    id_usuario: int
+    id_pet: int
+    data_adocao: date
+    formulario: Optional[str]
+
+class AdocaoCreate(AdocaoBase): 
+    pass
+
+class AdocaoOut(AdocaoBase):
+    id_adocao: int
+    class Config:
+        from_attributes = True 
+
+class Adocao(AdocaoBase):  # <-- Adicione essa classe
+    id_adocao: int
+    class Config:
+        orm_mode = True 
