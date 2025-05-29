@@ -2,6 +2,8 @@
 
 API desenvolvida com **FastAPI** para o projeto **Pet Resgate**, um sistema de gerenciamento de animais resgatados, adotantes e responsáveis. Esta API fornece endpoints RESTful para realizar operações de cadastro, consulta, atualização e remoção de dados relacionados a usuários, pets e adoções.
 
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 - [FastAPI](https://fastapi.tiangolo.com/) – Framework moderno e rápido para APIs
@@ -10,6 +12,7 @@ API desenvolvida com **FastAPI** para o projeto **Pet Resgate**, um sistema de g
 - [Pydantic](https://pydantic-docs.helpmanual.io/) – Validação e tipagem dos dados
 - [Uvicorn](https://www.uvicorn.org/) – Servidor ASGI para execução da aplicação
 
+---
 
 ## 📁 Estrutura de Pastas
 
@@ -38,6 +41,8 @@ PetResgate/
 ├── requirements.txt    # Dependências do projeto
 └── README.md           # Documentação
 ```
+
+---
 
 ## ⚙️ Como Rodar o Projeto
 
@@ -95,10 +100,22 @@ Acesse a documentação interativa:
 
 ---
 
+## 🐞 Possíveis Erros e Soluções
+
+**Erro**: `sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships...`  
+**Solução**: Verifique se você definiu corretamente os relacionamentos e as chaves estrangeiras nos seus modelos.
+
+---
 
 ## ✨ Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
 
 ---
 
