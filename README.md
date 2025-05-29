@@ -121,4 +121,6 @@ Este projeto está licenciado sob a **MIT License**.
 
 ## 👩‍💻 Desenvolvido por
 
-Jasmin e equipe 🚀
+[@Jasmin-dev](https://github.com/jasmin-dev),
+[@Vithor-dev](https://github.com/VithorNelson),
+[Nicolly-dev](https://github.com/nicsampaio)
