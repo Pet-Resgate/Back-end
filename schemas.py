@@ -1,4 +1,5 @@
 #Valida o que o usuário pode enviar e receber.
+
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
@@ -32,6 +33,9 @@ class PetBase(BaseModel):
     descricao: Optional[str]
     status: Optional[str]
     data_resgate: Optional[date]
+    brinca: Optional[int] = None        
+    carinhoso: Optional[int] = None     
+    sociavel: Optional[int] = None   
 
 class PetCreate(PetBase):
     id_usuario: int
