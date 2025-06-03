@@ -51,3 +51,5 @@ O banco de dados armazena e retorna as informações.
 
 documentacao 
 http://127.0.0.1:8000/docs#/
+
+uvicorn main:app --reload

@@ -1,5 +1,4 @@
 #Valida o que o usuário pode enviar e receber.
-
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
@@ -10,8 +9,8 @@ class UsuarioBase(BaseModel):
     nome: str
     idade: Optional[int]
     email: str
-    CPF: Optional[str]
-    CNPJ: Optional[str]
+    cpf: Optional[str]
+    cnpj: Optional[str]
     senha: str
     telefone: Optional[str]
 
