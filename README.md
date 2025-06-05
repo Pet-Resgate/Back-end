@@ -12,6 +12,8 @@ API desenvolvida com **FastAPI** para o projeto **Pet Resgate**, um sistema de g
 - [Pydantic](https://pydantic-docs.helpmanual.io/) – Validação e tipagem dos dados
 - [Uvicorn](https://www.uvicorn.org/) – Servidor ASGI para execução da aplicação
 
+- link API: https://web-production-8da63.up.railway.app/docs#/
+
 ---
 
 ## 📁 Estrutura de Pastas
