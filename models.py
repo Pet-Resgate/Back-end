@@ -33,6 +33,7 @@ class Pet(Base):
     brinca = Column(Integer)
     carinhoso = Column(Integer)
     sociavel = Column(Integer)
+    sexo = Column(String)
 
     dono = relationship("Usuario", back_populates="pets")
     adocao = relationship("Adocao", uselist=False, back_populates="pet")
