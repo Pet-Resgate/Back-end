@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Form
 from sqlalchemy.orm import Session
 from database import get_db
 import models
@@ -46,3 +46,19 @@ def deletar_usuario(usuario_id: int, db: Session = Depends(get_db)):
     db.delete(usuario)
     db.commit()
     return {"ok": True}
+
+# -------------------- LOGIN --------------------
+
+@router.post("/login")
+def login(email: str = Form(...), senha: str = Form(...), db: Session = Depends(get_db)):
+    usuario = db.query(models.Usuario).filter(models.Usuario.email == email).first()
+
+    if not usuario or usuario.senha != senha:
+        raise HTTPException(status_code=401, detail="E-mail ou senha inválidos.")
+    
+    return {
+        "mensagem": "Login realizado com sucesso",
+        "id_usuario": usuario.id_usuario,
+        "nome": usuario.nome,
+        "tipo_usuario": usuario.tipo_usuario
+    }
