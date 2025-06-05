@@ -38,12 +38,11 @@ class PetBase(BaseModel):
     sociavel: Optional[int] = None   
     sexo: Optional[str]
 
-class PetCreate(PetBase):
-    id_usuario: int
+
 
 class PetOut(PetBase):
     id_pet: int
-    id_usuario: int
+    
     class Config:
         from_attributes = True 
 
