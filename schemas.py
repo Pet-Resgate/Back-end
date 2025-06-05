@@ -36,7 +36,7 @@ class PetBase(BaseModel):
     brinca: Optional[int] = None        
     carinhoso: Optional[int] = None     
     sociavel: Optional[int] = None   
-    sexo: Optional[str]
+    sexo: Optional[string]
 
 
 
