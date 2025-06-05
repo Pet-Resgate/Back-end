@@ -40,9 +40,12 @@ class PetBase(BaseModel):
 
 
 
+class PetCreate(PetBase):
+    id_usuario: int
+
 class PetOut(PetBase):
     id_pet: int
-    
+    id_usuario: int
     class Config:
         from_attributes = True 
 
